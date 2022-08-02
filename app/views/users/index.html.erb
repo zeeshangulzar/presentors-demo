@@ -13,7 +13,7 @@
     <% @users.each do |u| %>
     <% user = UserPresenter.new(u) %>
   <p class="my-5">
-    <strong class="block font-medium mb-1">Full name:</strong>
+    <strong class="block font-medium mb-1">Full Name:</strong>
     <%= user.full_name %>
   </p>
 
@@ -23,8 +23,8 @@
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Birthdate:</strong>
-    <%= user.birthdate %>
+    <strong class="block font-medium mb-1">Birth Year:</strong>
+    <%= user.birth_year %>
   </p>
 
   <p class="my-5">
