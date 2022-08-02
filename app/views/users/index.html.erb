@@ -8,7 +8,36 @@
     <%= link_to 'New user', new_user_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
+
   <div id="users" class="min-w-full">
-    <%= render @users %>
+    <% @users.each do |u| %>
+    <% user = UserPresenter.new(u) %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Full name:</strong>
+    <%= user.full_name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= user.email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Birthdate:</strong>
+    <%= user.birthdate %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Bio:</strong>
+    <%= user.bio %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this user", user, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this user', edit_user_path(user), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+
+<% end %>
   </div>
 </div>
